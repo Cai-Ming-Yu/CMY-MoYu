@@ -1,4 +1,4 @@
-# 彩铭羽 モーユー(MoYu)
+# 彩銘羽 モーユー(MoYu)
 簡単な方法でCPUの性能テストを行う！
 
 The CPU performance is tested by the Chacha20 encryption test, and the CPU is scored by the final number of encryptions.
