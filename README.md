@@ -24,6 +24,8 @@ In general, the size of the running memory occupied by MoYu is the value of the 
 
 For the compilation method, the recommended method for this project is to compile with Visual Studio for Windows (open the configuration file of the Visual Studio project through Visual Studio), and the Linux platform (including Android) to compile with Android NDK (for a simple example, open the folder where the project file is located on the Windows platform, and then right-click and select "Open in Terminal", Finally, compile via the "ndk-build" command and enter (you need to set the Android NDK path in the system's Path)), but this does not mean that MoYu cannot run on other platforms, other CPU architectures, or cannot be compiled using other compilation tools, it is just not tested.
 
+Note that when compiling with the Android NDK, you can change the schema to be compiled by modifying the "ARCH" variable in the "Application.mk" file.
+
 MoYu's Windows GUI version and Android APK version will arrive soon!
 
 ## [License](https://github.com/Cai-Ming-Yu/CMY-MoYu/blob/C-M-Y/LICENSE)
