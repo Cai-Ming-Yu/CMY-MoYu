@@ -1,0 +1,33 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ "C-M-Y" ]
+  pull_request:
+    branches: [ "C-M-Y" ]
+  workflow_dispatch:
+
+jobs:
+  try_to_build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Android NDK
+        uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r26b
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+      - name: Build CI Version
+        run: cd jni ; ndk-build ; msbuild MoYu.sln /p:Platform="x64" /p:Configuration="Release" ; msbuild MoYu.sln /p:Platform="x86" /p:Configuration="Release"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MoYu-CI
+          path: |
+            libs
+            jni/Release/MoYu.exe
+            jni/x64/Release/MoYu.exe
