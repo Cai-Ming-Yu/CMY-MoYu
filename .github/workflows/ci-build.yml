@@ -18,7 +18,7 @@ jobs:
       - name: Setup Android NDK
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r26b
+          ndk-version: r26c
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
       - name: Build CI Version
@@ -27,6 +27,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MoYu-CI
+          compression-level: 9
           path: |
             libs
             jni/Release/MoYu.exe
