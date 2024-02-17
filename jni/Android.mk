@@ -8,6 +8,6 @@ LOCAL_MODULE := MoYu
 
 LOCAL_MODULE_FILENAME := MoYu
 
-LOCAL_LDFLAGS := -static -fPIC -O3 -Wl,--strip-all -pipe
+LOCAL_LDFLAGS := -static -Wl,--strip-all -O3 -fPIC -pipe -g0 -flto=thin
 
 include $(BUILD_EXECUTABLE)
